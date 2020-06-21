@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: 'Raleway', sans-serif !important;
+  font-family: 'Raleway', sans-serif;
   color: var(--Dark) !important;
   background: var(--White);
   overflow-x: hidden;
@@ -18,7 +18,7 @@ p {
 }
 
 h1, h3, h4 {
-  font-family: 'Squada One', cursive;
+  font-family: 'Squada One', cursive !important;
 }
 
 .btn-black {
