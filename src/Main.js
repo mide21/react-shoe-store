@@ -117,7 +117,7 @@ class MainProvider extends Component {
                 cart: [...tempCart]
             },
                 () => {
-                    this.addTotals()
+                    this.addTotals();
                 })
         }
     }
@@ -129,13 +129,15 @@ class MainProvider extends Component {
         tempCart = tempCart.filter(product => product.id !== id);
         const index = tempProducts.indexOf(this.getProduct(id));
         let deletedProduct = tempProducts[index];
-        deletedProduct.inCart = 0;
+        deletedProduct.inCart = false;
         deletedProduct.total = 0;
         deletedProduct.count = 0;
         this.setState({
             products: [...tempProducts],
             cart: [...tempCart],
             counter: counter
+        }, () => {
+            this.addTotals();
         })
     }
 
