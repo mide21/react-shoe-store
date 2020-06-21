@@ -1,0 +1,146 @@
+:root {
+  --Blue: #2a2a72;
+  --lightBlue: #2a2a72c0;
+  --White: #f3f3f3;
+  --Dark: #232528;
+  --Red: #f84545;
+}
+
+body {
+  font-family: 'Raleway', sans-serif !important;
+  color: var(--Dark) !important;
+  background: var(--White);
+  overflow-x: hidden;
+}
+
+p {
+  font-family: 'Raleway', sans-serif !important;
+}
+
+h1, h3, h4 {
+  font-family: 'Squada One', cursive;
+}
+
+.btn-black {
+  background: var(--Blue) !important;
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  color: var(--White);
+  border-radius: 30px !important;
+  width: 30px;
+  height: 30px;
+  padding: 0 2px !important;
+}
+
+.btn-black:hover {
+  color: var(--White);
+}
+
+.counter {
+  background: #ccc !important;
+  color: var(--Dark);
+  border-radius: 0 !important;
+  font-size: 1.2rem;
+  padding: 0 2px !important;
+  width: 30px;
+  height: 30px;
+}
+
+.cart {
+  color: var(--Blue);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #ccc !important;
+  padding-bottom: 1rem;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 26px;
+  margin: 0 1rem 0 1rem;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  background-color: #fff;
+  transition: .4s;
+}
+
+input:checked+.slider {
+  background-color: #000;
+}
+
+input:focus+.slider {
+  box-shadow: 0 0 1px #000;
+}
+
+input:checked+.slider:before {
+  transform: translate(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.columns {
+  padding: 1rem 0 0 0;
+  background: #ccc;
+  border: none;
+  width: 100%;
+}
+
+@media(max-width: 320px) {
+  .header img {
+    width: 100%;
+  }
+}
+
+@media(max-width: 480px) {
+  .header {
+    padding: 0 5px;
+  }
+  .mt-6 {
+    margin-top: 3rem !important;
+  }
+}
+
+@media(max-width: 767px) {
+  .cart {
+    margin: 2.5rem 0 1rem -2.1rem !important;
+  }
+}
+
+@media(max-width: 1024px) {
+  Head.div {
+    padding: 1.3rem 0 0.5rem 0;
+  }
+}
