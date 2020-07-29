@@ -17,8 +17,35 @@ class MainProvider extends Component {
         total: 0
     };
 
+    UNSAFE_componentWillMount() {
+        localStorage.getItem('cart') && this.setState({
+            cart: JSON.parse(localStorage.getItem('cart'))
+        })
+
+        localStorage.getItem('counter') && this.setState({
+            counter: JSON.parse(localStorage.getItem('counter'))
+        })
+        localStorage.getItem('subTotal') && this.setState({
+            subTotal: JSON.parse(localStorage.getItem('subTotal'))
+        })
+        localStorage.getItem('tax') && this.setState({
+            tax: JSON.parse(localStorage.getItem('tax'))
+        })
+        localStorage.getItem('total') && this.setState({
+            total: JSON.parse(localStorage.getItem('total'))
+        })
+    }
+
     componentDidMount() {
         this.setProducts();
+    }
+
+    UNSAFE_componentWillUpdate(nextProps, nextState,) {
+        localStorage.setItem('cart', JSON.stringify(nextState.cart));
+        localStorage.setItem('counter', JSON.stringify(nextState.counter));
+        localStorage.setItem('subTotal', JSON.stringify(nextState.subTotal));
+        localStorage.setItem('tax', JSON.stringify(nextState.tax));
+        localStorage.setItem('total', JSON.stringify(nextState.total));
     }
 
     onSwitch = () => {
@@ -143,7 +170,7 @@ class MainProvider extends Component {
 
     clearCart = () => {
         this.setState({
-            cart: [], counter: 0 
+            cart: [], counter: 0
         },
             () => {
                 this.setProducts();
@@ -158,6 +185,8 @@ class MainProvider extends Component {
             <MainContext.Provider
                 value={{
                     ...this.state,
+                    handleChange: this.handleChange,
+                    handleSubmit: this.handleSubmit,
                     handleDetail: this.handleDetail,
                     addToCart: this.addToCart,
                     openModal: this.openModal,
@@ -166,7 +195,8 @@ class MainProvider extends Component {
                     increment: this.increment,
                     decrement: this.decrement,
                     clearCart: this.clearCart,
-                    deleteProduct: this.deleteProduct
+                    deleteProduct: this.deleteProduct,
+                    togglePasswordVisiblity: this.togglePasswordVisiblity
                 }}
             >
                 {this.props.children}

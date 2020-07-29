@@ -38,7 +38,10 @@ export default class Header extends Component {
 
 const Head = styled.div`
     background: var(--lightBlue);
-    padding: 2em 0px 1.5em 0px;
+    padding: 3em 0px 1.5em 0px;
+    .navbar-nav {
+        flex-direction: row !important;
+    }
     .cart {
         font-size: 1.8rem;
         cursor: pointer;

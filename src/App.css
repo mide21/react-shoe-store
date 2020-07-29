@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Raleway', sans-serif !important;
   color: var(--Dark) !important;
   background: var(--White);
   overflow-x: hidden;
@@ -18,7 +18,7 @@ p {
 }
 
 h1, h3, h4 {
-  font-family: 'Squada One', cursive !important;
+  font-family: 'Squada One', cursive;
 }
 
 .btn-black {
@@ -118,6 +118,13 @@ input:checked+.slider:before {
   width: 100%;
 }
 
+.icon {
+  position: absolute;
+  bottom: 48%;
+  right: 3%;
+  cursor:pointer;
+}
+
 @media(max-width: 320px) {
   .header img {
     width: 100%;
@@ -141,6 +148,6 @@ input:checked+.slider:before {
 
 @media(max-width: 1024px) {
   Head.div {
-    padding: 1.3rem 0 0.5rem 0;
+    padding: 1.5rem 0 0.5rem 0;
   }
 }
